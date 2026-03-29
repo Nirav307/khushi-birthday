@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Happy Birthday Khushi ♥</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 1 — HERO
+  ══════════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="petal-container" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <p class="hero-subtitle">Today, the world celebrates</p>
+      <h1 class="hero-title">
+        <span class="title-line">Happy Birthday</span>
+        <span class="name-line">Khushi</span>
+      </h1>
+      <p class="hero-tagline">
+        Every moment with you is a poem I never want to finish.
+      </p>
+      <a class="scroll-prompt" href="#gallery" aria-label="Scroll down">
+        <span class="scroll-label">Scroll down, my love</span>
+        <div class="scroll-arrow"></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 2 — PHOTO GALLERY
+  ══════════════════════════════════════════════ -->
+  <section id="gallery">
+    <h2 class="section-heading">Our Story, In Moments</h2>
+    <p class="section-sub">Every picture holds a piece of my heart</p>
+
+    <div class="gallery-wrapper">
+      <div class="gallery-frame">
+        <div class="slide-track" id="slide-track">
+          <div class="slide active"><img src="images/photo1.jpeg" alt="A beautiful memory" loading="lazy" /></div>
+          <div class="slide"><img src="images/photo2.jpeg" alt="A beautiful memory" loading="lazy" /></div>
+          <div class="slide"><img src="images/photo3.jpeg" alt="A beautiful memory" loading="lazy" /></div>
+          <div class="slide"><img src="images/photo4.jpeg" alt="A beautiful memory" loading="lazy" /></div>
+          <div class="slide"><img src="images/photo5.jpeg" alt="A beautiful memory" loading="lazy" /></div>
+          <div class="slide"><img src="images/photo6.jpeg" alt="A beautiful memory" loading="lazy" /></div>
+          <div class="slide"><img src="images/photo7.jpeg" alt="A beautiful memory" loading="lazy" /></div>
+          <div class="slide"><img src="images/photo8.jpeg" alt="A beautiful memory" loading="lazy" /></div>
+          <div class="slide"><img src="images/photo9.jpeg" alt="A beautiful memory" loading="lazy" /></div>
+          <div class="slide"><img src="images/photo10.jpeg" alt="A beautiful memory" loading="lazy" /></div>
+        </div>
+      </div>
+
+      <button class="gallery-btn prev" id="gallery-prev" aria-label="Previous photo">&#8249;</button>
+      <button class="gallery-btn next" id="gallery-next" aria-label="Next photo">&#8250;</button>
+
+      <div class="gallery-dots" id="gallery-dots"></div>
+    </div>
+
+    <p class="gallery-caption" id="gallery-caption"></p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 3 — LOVE LETTER
+  ══════════════════════════════════════════════ -->
+  <section id="love-letter">
+    <h2 class="section-heading light">A Letter, From Me To You</h2>
+    <p class="section-sub light">Written with all the love I carry</p>
+
+    <div class="letter-card">
+      <div class="letter-header">
+        <span class="letter-date">29th March, 2026</span>
+        <h3 class="letter-greeting" id="letter-greeting"></h3>
+      </div>
+
+      <div class="letter-body">
+        <p class="letter-paragraph" data-delay="0">
+          Today, on the day the universe gifted itself by bringing you into this world, I find myself at a complete loss for words — and yet, I cannot stop writing. You are the kind of person who makes ordinary Tuesday mornings feel like something worth remembering. You are warmth in the middle of winter, laughter in a quiet room, and every good thing I never thought to ask for.
+        </p>
+        <p class="letter-paragraph" data-delay="200">
+          I know you are far away right now, and I wish more than anything that I could be standing next to you, holding your hand, watching your face as you read this. But distance has never really kept us apart — you are always with me, in every thought, in every moment where something beautiful happens and I instinctively want to share it with you.
+        </p>
+        <p class="letter-paragraph" data-delay="400">
+          Khushi, you deserve every celebration this world can offer. Not just today, but every single day. You deserve slow mornings with no alarm, flowers for no reason, someone who notices the small things — and I promise you, I notice everything. The way your eyes light up when you are excited about something. The way you laugh before the punchline even lands. The way you make everyone around you feel like they matter.
+        </p>
+        <p class="letter-paragraph" data-delay="600">
+          So here is my promise to you, sealed in gold and rose: I will spend every year we have together making sure you feel as loved as you make me feel. Happy Birthday, my Khushi. You are my greatest adventure, my softest place to land, and the absolute best decision I have ever made.
+        </p>
+      </div>
+
+      <div class="letter-footer">
+        <p>Forever and always yours,</p>
+        <p class="letter-signature">Your Husband</p>
+        <span class="letter-hearts" aria-hidden="true">♥ ♥ ♥</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 4 — GIFT REVEAL
+  ══════════════════════════════════════════════ -->
+  <section id="gift-reveal">
+    <h2 class="section-heading">A Little Something for You...</h2>
+    <p class="section-sub">I've been keeping a secret. Tap to find out.</p>
+
+    <div class="gift-stage">
+      <!-- CSS Gift Box -->
+      <div class="gift-box" id="gift-box" role="button" tabindex="0" aria-label="Click to unwrap your gift">
+        <div class="gift-lid">
+          <div class="gift-ribbon ribbon-v-lid"></div>
+          <div class="gift-bow">
+            <div class="bow-left"></div>
+            <div class="bow-right"></div>
+            <div class="bow-knot"></div>
+          </div>
+        </div>
+        <div class="gift-base">
+          <div class="gift-ribbon ribbon-v-base"></div>
+          <div class="gift-ribbon ribbon-h-base"></div>
+        </div>
+        <p class="gift-hint">Tap to unwrap 🎁</p>
+      </div>
+
+      <!-- Confetti canvas (injected by JS) -->
+
+      <!-- Reveal message (hidden initially) -->
+      <div class="gift-message" id="gift-message" hidden>
+        <div class="gift-message-inner">
+          <div class="gift-icons" aria-hidden="true">🎁 ✨ 💕</div>
+          <h3 class="gift-message-title">Your Gift Awaits, My Love!</h3>
+          <div class="gift-message-body">
+            <p>The moment you walk back through our door, I have something very special planned just for you.</p>
+            <div class="gift-item">
+              <span class="gift-item-icon">🕯️</span>
+              <div>
+                <strong>A Proper Date Night</strong>
+                <p>Designed entirely around you — your favourite restaurant, your favourite film, candlelight, no phones, just us. I want to hear every story from your trip, and I want you to feel completely spoiled.</p>
+              </div>
+            </div>
+            <div class="gift-item">
+              <span class="gift-item-icon">🛍️</span>
+              <div>
+                <strong>A Shopping Trip, Just For You</strong>
+                <p>You pick absolutely anything you want. No budget discussions, no "are you sure about that?". This is your day, extended into a full weekend of celebration.</p>
+              </div>
+            </div>
+            <p class="gift-closing">You have been so patient, so strong, being away. Come home soon. Everything is waiting — including me.</p>
+            <p class="gift-signature"><em>— Your Husband, counting down the hours</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="site-footer">
+    <p>Made with <span aria-hidden="true">♥</span> just for you, Khushi</p>
+    <p class="footer-sub">Happy Birthday, my love. 🌹</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
