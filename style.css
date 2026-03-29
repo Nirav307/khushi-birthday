@@ -24,7 +24,6 @@
   --font-heading: 'Playfair Display', serif;
   --font-letter:  'Cormorant Garamond', serif;
   --font-body:    'Lato', sans-serif;
-  --font-gu:      'Noto Sans Gujarati', sans-serif;
 }
 
 html { scroll-behavior: smooth; }
@@ -42,30 +41,6 @@ a   { text-decoration: none; color: inherit; }
 /* ══════════════════════════════════════════════
    FLOATING UI BUTTONS
 ══════════════════════════════════════════════ */
-#lang-toggle {
-  position: fixed;
-  top: 1.2rem;
-  right: 1.2rem;
-  z-index: 1000;
-  background: linear-gradient(135deg, var(--rose-light), var(--rose));
-  color: #fff;
-  border: none;
-  padding: 0.45rem 1.15rem;
-  border-radius: 999px;
-  font-family: var(--font-body);
-  font-size: 0.92rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  cursor: pointer;
-  box-shadow: 0 3px 14px rgba(168,24,58,0.5);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-}
-
-#lang-toggle:hover  { transform: scale(1.07); box-shadow: 0 5px 20px rgba(168,24,58,0.6); }
-#lang-toggle:active { transform: scale(0.97); }
-
 #music-toggle {
   position: fixed;
   bottom: 1.4rem;
@@ -91,35 +66,6 @@ a   { text-decoration: none; color: inherit; }
 
 #music-toggle:hover  { transform: scale(1.12); box-shadow: 0 6px 24px rgba(201,151,58,0.7); }
 #music-toggle:active { transform: scale(0.95); }
-
-/* ══════════════════════════════════════════════
-   GUJARATI FONT SWITCHING
-══════════════════════════════════════════════ */
-[data-lang="gu"] [data-key],
-[data-lang="gu"] .gallery-caption {
-  font-family: var(--font-gu);
-}
-
-[data-lang="gu"] .section-heading,
-[data-lang="gu"] .letter-greeting,
-[data-lang="gu"] .gift-message-title {
-  font-family: var(--font-gu);
-  font-style: normal;
-}
-
-[data-lang="gu"] .name-line {
-  font-family: var(--font-gu);
-  font-style: normal;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-}
-
-[data-lang="gu"] .letter-paragraph,
-[data-lang="gu"] .letter-footer {
-  font-family: var(--font-gu);
-  font-style: normal;
-  line-height: 2;
-}
 
 /* ══════════════════════════════════════════════
    SCROLL ANIMATION UTILITY

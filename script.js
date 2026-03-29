@@ -1,149 +1,22 @@
 'use strict';
 
 /* ══════════════════════════════════════════════
-   LANGUAGE CONTENT
+   CAPTIONS
 ══════════════════════════════════════════════ */
-let currentLang = localStorage.getItem('lang') || 'en';
+const CAPTIONS = [
+  'The day everything made sense',
+  'My favourite smile in the world',
+  'Adventures are better with you',
+  'Home is wherever you are',
+  "Some days I still can't believe you're mine",
+  'Every photo with you is my favourite',
+  'Making memories, one day at a time',
+  'The best is always yet to come',
+  'You make ordinary moments extraordinary',
+  'A lifetime of this, please'
+];
 
-const CONTENT = {
-  en: {
-    hero_subtitle:    'Today, the world celebrates',
-    hero_title:       'Happy Birthday',
-    hero_name:        'Khushi',
-    hero_tagline:     'Every moment with you is a poem I never want to finish.',
-    scroll_label:     'Scroll down, my love',
-    gallery_heading:  'Our Story, In Moments',
-    gallery_sub:      'Every picture holds a piece of my heart',
-    letter_heading:   'A Letter, From Me To You',
-    letter_sub:       'Written with all the love I carry',
-    letter_date:      '29th March, 2026',
-    letter_greeting:  'My Love Khushi,',
-    letter_para_1:    'Happy Birthday ❤️ Today is all about you — the most beautiful, graceful, and irreplaceable part of my life. And honestly, I don\'t think words will ever be enough to describe what you truly mean to me… but I still want to try.',
-    letter_para_2:    'Khushi, you are not just my wife, you are my peace, my strength, and the person who makes everything feel right. There\'s a certain warmth in your presence that makes even the simplest moments feel special. Being with you feels like home in the purest sense.',
-    letter_para_3:    'I\'ve always admired how effortlessly you carry yourself — with elegance, kindness, and quiet strength. There\'s something truly special about you… something that makes you stand out without ever trying. And I feel incredibly lucky that I get to call you mine.',
-    letter_para_4:    'Thank you for filling my life with love, understanding, and happiness. You make everything better just by being you. Every day with you is a gift I never take for granted. On your birthday, I just want you to know how deeply you are loved, how valued you are, and how much you mean to me — not just today, but every single day. I hope this year brings you everything your heart desires, because you deserve nothing less than the very best in life.',
-    letter_signoff:   'Happy Birthday, Khushi.',
-    letter_signature: 'Forever yours ❤️',
-    gift_heading:     'A Little Something for You...',
-    gift_sub:         "I've been keeping a secret. Tap to find out.",
-    gift_hint:        'Tap to unwrap 🎁',
-    gift_msg_title:   'Your Gift Awaits, My Love!',
-    gift_msg_intro:   'The moment you walk back through our door, I have something very special planned just for you.',
-    gift_item1_title: 'A Proper Date Night',
-    gift_item1_body:  'Designed entirely around you — your favourite restaurant, your favourite film, candlelight, no phones, just us. I want to hear every story from your trip, and I want you to feel completely spoiled.',
-    gift_item2_title: 'A Shopping Trip, Just For You',
-    gift_item2_body:  'You pick absolutely anything you want. No budget discussions, no "are you sure about that?". This is your day, extended into a full weekend of celebration.',
-    gift_closing:     'You have been so patient, so strong, being away. Come home soon. Everything is waiting — including me.',
-    gift_signature:   '— Your Husband, counting down the hours',
-    footer_main:      'just for you, Khushi',
-    footer_sub:       'Happy Birthday, my love. 🌹',
-    captions: [
-      'The day everything made sense',
-      'My favourite smile in the world',
-      'Adventures are better with you',
-      'Home is wherever you are',
-      "Some days I still can't believe you're mine",
-      'Every photo with you is my favourite',
-      'Making memories, one day at a time',
-      'The best is always yet to come',
-      'You make ordinary moments extraordinary',
-      'A lifetime of this, please'
-    ]
-  },
-
-  gu: {
-    hero_subtitle:    'આજે, આ દુનિયા ઉજવે છે',
-    hero_title:       'જન્મદિવસ મુબારક',
-    hero_name:        'ખુશી',
-    hero_tagline:     'તારી સાથે વિતાવેલી દરેક ક્ષણ એ એક એવી કવિતા છે, જે હું ક્યારેય પૂરી કરવા નથી ઇચ્છતો.',
-    scroll_label:     'નીચે સ્ક્રોલ કર, મારા પ્રેમ',
-    gallery_heading:  'આપણી વાર્તા, ક્ષણોમાં',
-    gallery_sub:      'દરેક તસ્વીર મારા દિલનો એક ટુકડો સંભાળી રાખે છે',
-    letter_heading:   'એક પત્ર, મારા તરફથી, તારા માટે',
-    letter_sub:       'જેટલો પ્રેમ હૃદયમાં છે, એ બધા સાથે લખ્યો છે',
-    letter_date:      '૨૯ માર્ચ, ૨૦૨૬',
-    letter_greeting:  'મારી સૌથી પ્યારી ખુશી,',
-    letter_para_1:    'આજે, જ્યારે સૃષ્ટિ ખુદ ઉજવે છે, ત્યારે હું શબ્દો ગુમાવી બેઠો છું — અને છતાં, લખ્યા જ જઉં છું. તું એ પ્રકારની વ્યક્તિ છે, જે સાદા મંગળવારની સવારને પણ યાદ રહે એવી બનાવી દે. તું ઠંડીમાં હૂંફ છે, શાંત ઓરડામાં હાસ્ય છે, અને એ દરેક સારી ચીજ છે — જે માગી નહોતી, પણ મળી ગઈ.',
-    letter_para_2:    'હું જાણું છું કે તું અત્યારે દૂર છે, અને ઇચ્છું છું — ખૂબ ઇચ્છું છું — કે હું તારી બાજુમાં ઊભો હોત, તારો હાથ પકડ્યો હોત, અને આ વાંચતી વખતે તારો ચહેરો જોઈ શક્યો હોત. પણ અંતર ક્યારેય આપણને ખરેખર અળગા નથી કર્યા — દરેક વિચારમાં, દરેક સુંદર ક્ષણે — જ્યારે મન ઇચ્છે કે "તને કહું" — ત્યારે તું જ સૌ પ્રથમ યાદ આવે.',
-    letter_para_3:    'ખુશી, આ દુનિયા જે ઉજવણી આપી શકે, તું તે દરેકની હકદાર છે. આજ નહીં — હરરોજ. ઘડિયાળ વગરની શાંત સવારો, કોઈ કારણ વિના ફૂલ, એ વ્યક્તિ જે નાની-નાની વાત ધ્યાને રાખે — અને હું, હું સઘળું ધ્યાન રાખું છું. જ્યારે તું ખુશ થાય ત્યારે તારી આંખ કઈ રીતે ચમકે, બોલવાની વાત આવે પહેલાં જ તું કઈ રીતે હસી પડે, અને તારી આસપાસ દરેક વ્યક્તિ કઈ રીતે ખૂદ મહત્ત્વની અનુભવે.',
-    letter_para_4:    'તો આ મારું વચન છે, સોના અને ગુલાબ સાથે સીલ કરેલું — આપણી સાથે ગાળેલા દરેક વર્ષમાં, હું ખાતરી રાખીશ કે તને એવો જ પ્રેમ અનુભવાય, જેવો પ્રેમ તું મને અનુભવાવે છે. જન્મદિવસ મુબારક, મારી ખુશી. તું મારું સૌથી મોટું સાહસ છે, મારી સૌથી નરમ ભૂમિ, અને સૌથી સારો નિર્ણય — જે મેં ક્યારેય લીધો.',
-    letter_signoff:   'હંમેશ-હંમેશ, ફક્ત તારો,',
-    letter_signature: 'તારો પતિ',
-    gift_heading:     'તારા માટે એક નાનકડી ભેટ...',
-    gift_sub:         'એક ગુપ્ત વાત છે. જાણવા ટેપ કર.',
-    gift_hint:        'ખોલવા ટેપ કર 🎁',
-    gift_msg_title:   'તારી ભેટ રાહ જોઈ રહી છે, મારા પ્રેમ!',
-    gift_msg_intro:   'જ્યારે તું ઘરે પાછી આવે, ત્યારે તારા માટે ખૂબ ખાસ કંઈ આયોજન કર્યું છે.',
-    gift_item1_title: 'એક સાચી ડેટ નાઇટ',
-    gift_item1_body:  'સંપૂર્ણ તારા માટે — તારી પ્રિય રેસ્ટૉરન્ટ, તારી મનગમતી ફિલ્મ, મીણબત્તીઓ, ફૉન નહીં, ફક્ત આપણે બે. તારી સફરની દરેક વાત સાંભળવી છે, અને ઇચ્છું છું કે તું સંપૂર્ણ લાડ અનુભવે.',
-    gift_item2_title: 'ખરીદી, ફક્ત તારા માટે',
-    gift_item2_body:  'જે ગમે તે, જેટલું ગમે — ક્યાંય ના નહીં. "ખાતરી છે?" એ સવાલ નહીં. આ તારો દિવસ છે — આખા વીકેન્ડ સુધી.',
-    gift_closing:     'તું ઘણી ધૈર્યવાન છે, ઘણી મક્કમ — દૂર રહીને. જલ્દી ઘરે આ. બધું ય રાહ જોઈ રહ્યું છે — હું પણ.',
-    gift_signature:   '— તારો પતિ, કલાકો ગણતા',
-    footer_main:      'ફક્ત તારા માટે, ખુશી',
-    footer_sub:       'જન્મદિવસ મુબારક, મારા પ્રેમ. 🌹',
-    captions: [
-      'જ્યારે બધું સ્પષ્ટ થઈ ગયું તે દિવસ',
-      'દુનિયાની સૌથી વ્હાલી સ્મિત',
-      'સાહસ, તારી સાથે હોય ત્યારે જ સારું',
-      'ઘર, જ્યાં તું હોય ત્યાં',
-      'કેટલીક વાર હજી ય વિશ્વાસ નથી થતો — તું મારી છે',
-      'તારી સાથેની દરેક તસ્વીર, મારી સૌથી પ્રિય',
-      'એક-એક દિવસ, સ્મૃતિઓ બનાવતા',
-      'સૌથી સારું હજી બાકી છે',
-      'સાધારણ ક્ષણોને અસાધારણ બનાવે છે તું',
-      'આ જ, આખી જિંદગી — બસ'
-    ]
-  }
-};
-
-/* ══════════════════════════════════════════════
-   SWITCH LANGUAGE
-══════════════════════════════════════════════ */
-let greetingInterval = null;
-
-function switchLang(lang) {
-  currentLang = lang;
-  localStorage.setItem('lang', lang);
-  document.documentElement.setAttribute('data-lang', lang);
-
-  // Toggle button label shows the OTHER language
-  const label = document.getElementById('lang-label');
-  if (label) label.textContent = lang === 'en' ? 'ગુ' : 'EN';
-
-  const strings = CONTENT[lang];
-
-  // Update all [data-key] text elements
-  document.querySelectorAll('[data-key]').forEach(el => {
-    const key = el.dataset.key;
-    if (!(key in strings)) return;
-
-    // footer_main has a nested .footer-heart span — preserve it
-    if (key === 'footer_main') {
-      const heart = el.querySelector('.footer-heart');
-      el.textContent = 'Made with ';
-      if (heart) el.appendChild(heart);
-      el.appendChild(document.createTextNode(' ' + strings[key]));
-    } else {
-      // gift_signature wraps an <em> — handle it
-      if (key === 'gift_signature') {
-        const em = el.querySelector('em');
-        if (em) { em.textContent = strings[key]; return; }
-      }
-      el.textContent = strings[key];
-    }
-  });
-
-  // Update gallery captions array and current caption
-  Gallery.captions = strings.captions;
-  const captionEl = document.getElementById('gallery-caption');
-  if (captionEl) captionEl.textContent = strings.captions[Gallery.current] || '';
-
-  // Update letter greeting (clear any running typewriter first)
-  if (greetingInterval) { clearInterval(greetingInterval); greetingInterval = null; }
-  const greetingEl = document.getElementById('letter-greeting');
-  if (greetingEl) greetingEl.textContent = strings.letter_greeting;
-}
+const LETTER_GREETING = 'My Love Khushi,';
 
 /* ══════════════════════════════════════════════
    UTILITIES
@@ -214,7 +87,7 @@ function createPetals() {
 const Gallery = {
   slides:   [],
   dots:     [],
-  captions: CONTENT[currentLang].captions,
+  captions: CAPTIONS,
   current:  0,
   timer:    null,
   interval: 4000,
@@ -319,7 +192,7 @@ function initLetter() {
       if (!entries[0].isIntersecting) return;
       observer.disconnect();
 
-      const text = CONTENT[currentLang].letter_greeting;
+      const text = LETTER_GREETING;
       if (reducedMotion) { greetingEl.textContent = text; return; }
 
       let i = 0;
@@ -531,16 +404,6 @@ function initCursorSparkles() {
    INIT ON DOM READY
 ══════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
-  // Apply persisted language
-  document.documentElement.setAttribute('data-lang', currentLang);
-  if (currentLang === 'gu') switchLang('gu');
-
-  // Language toggle button
-  const langToggle = document.getElementById('lang-toggle');
-  if (langToggle) {
-    langToggle.addEventListener('click', () => switchLang(currentLang === 'en' ? 'gu' : 'en'));
-  }
-
   createPetals();
   Gallery.init();
   initLetter();
